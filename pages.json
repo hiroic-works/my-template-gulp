@@ -1,0 +1,49 @@
+{
+	"pages": {
+		"default": {
+			"page_id": "",
+			"root_url": "https://exsample.com",
+			"meta": [
+				{
+					"name": "msapplication-TileImage",
+					"content": "img url"
+				},
+				{
+					"name": "msapplication-TileColor",
+					"content": "#999999"
+				}
+			],
+			"check": {
+				"is_ogp": true
+			},
+			"title": "site title",
+			"description": "site description",
+			"keywords": "site keyword",
+			"ogp_url": "page url",
+			"ogp_type": "website",
+			"ogp_img": "ogp img url",
+			"ogp_sitename": "hoge Inc.",
+			"ogp_locale": "ja_JP",
+			"fb_appid": "facebook id",
+			"tw_card": "summary_large_image",
+			"tw_username": "@username",
+			"favicon_url": "favicon url",
+			"appleicon_url": "appicon url",
+			"html_class": "",
+			"body_class": "",
+			"css": [],
+			"js": []
+		},
+		"top": {
+			"page_id": "top",
+			"body_class": "top"
+		},
+		"about": {
+			"page_id": "about",
+			"title": "about title",
+			"description": "about description",
+			"keywords": "about keyword",
+			"body_class": "about"
+		}
+	}
+}

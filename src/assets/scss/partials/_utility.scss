@@ -1,0 +1,142 @@
+@import "includes";
+
+/*-----------------------------------------------------------------------------
+
+util style
+
+-----------------------------------------------------------------------------*/
+
+/* crear,float */
+.util-cf:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.util-fl {
+	float: left;
+}
+.util-fr {
+	float: right;
+}
+.util-both {
+	clear: both;
+}
+
+/* display table */
+.util-dt {
+	display: table;
+}
+.util-dc {
+	display: table-cell;
+}
+
+/* margin */
+// .util-m0 {margin: 0 !important;}
+
+// .util-mt0 {margin-top: 0 !important;}
+// .util-mt5  {margin-top: 5px !important;}
+// .util-mt10 {margin-top: 10px !important;}
+// .util-mt15 {margin-top: 15px !important;}
+// .util-mt20 {margin-top: 20px !important;}
+// .util-mt25 {margin-top: 25px !important;}
+// .util-mt30 {margin-top: 30px !important;}
+
+// .util-mr0 {margin-right: 0 !important;}
+// .util-mr5  {margin-right: 5px !important;}
+// .util-mr10 {margin-right: 10px !important;}
+// .util-mr15 {margin-right: 15px !important;}
+// .util-mr20 {margin-right: 20px !important;}
+// .util-mr25 {margin-right: 25px !important;}
+// .util-mr30 {margin-right: 30px !important;}
+
+// .util-mb0 {margin-bottom: 0 !important;}
+// .util-mb5  {margin-bottom: 5px !important;}
+// .util-mb10 {margin-bottom: 10px !important;}
+// .util-mb15 {margin-bottom: 15px !important;}
+// .util-mb20 {margin-bottom: 20px !important;}
+// .util-mb25 {margin-bottom: 25px !important;}
+// .util-mb30 {margin-bottom: 30px !important;}
+
+// .util-ml0 {margin-left: 0 !important;}
+// .util-ml5  {margin-left: 5px !important;}
+// .util-ml10 {margin-left: 10px !important;}
+// .util-ml15 {margin-left: 15px !important;}
+// .util-ml20 {margin-left: 20px !important;}
+// .util-ml25 {margin-left: 25px !important;}
+// .util-ml30 {margin-left: 30px !important;}
+
+/* padding */
+// .util-p0 {padding: 0 !important;}
+
+// .util-pt0 {padding-top: 0 !important;}
+// .util-pt5  {padding-top: 5px !important;}
+// .util-pt10 {padding-top: 10px !important;}
+// .util-pt15 {padding-top: 15px !important;}
+// .util-pt20 {padding-top: 20px !important;}
+// .util-pt25 {padding-top: 25px !important;}
+// .util-pt30 {padding-top: 30px !important;}
+
+// .util-pr0 {padding-right: 0 !important;}
+// .util-pr5  {padding-right: 5px !important;}
+// .util-pr10 {padding-right: 10px !important;}
+// .util-pr15 {padding-right: 15px !important;}
+// .util-pr20 {padding-right: 20px !important;}
+// .util-pr25 {padding-right: 25px !important;}
+// .util-pr30 {padding-right: 30px !important;}
+
+// .util-pb0 {padding-bottom: 0 !important;}
+// .util-pb5  {padding-bottom: 5px !important;}
+// .util-pb10 {padding-bottom: 10px !important;}
+// .util-pb15 {padding-bottom: 15px !important;}
+// .util-pb20 {padding-bottom: 20px !important;}
+// .util-pb25 {padding-bottom: 25px !important;}
+// .util-pb30 {padding-bottom: 30px !important;}
+
+// .util-pl0 {padding-left: 0 !important;}
+// .util-pl5  {padding-left: 5px !important;}
+// .util-pl10 {padding-left: 10px !important;}
+// .util-pl15 {padding-left: 15px !important;}
+// .util-pl20 {padding-left: 20px !important;}
+// .util-pl25 {padding-left: 25px !important;}
+// .util-pl30 {padding-left: 30px !important;}
+
+/* border none */
+// .util-bd0 {border: none !important;}
+// .util-bdt0 {border-top: none !important;}
+// .util-bdr0 {border-right: none !important;}
+// .util-bdb0 {border-bottom: none !important;}
+// .util-bdl0 {border-left: none !important;}
+
+/* position */
+// .util-pl {position: relative !important;}
+// .util-pa {position: absolute !important;}
+// .util-ps {position: static !important;}
+
+/* text-ellipsis */
+.util-ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* text align */
+.util-tal {
+	text-align: left !important;
+}
+.util-tac {
+	text-align: center !important;
+}
+.util-tar {
+	text-align: right !important;
+}
+
+/* hidden or visible */
+.util-hidden {
+	display: none !important;
+}
+.util-visible {
+	display: block !important;
+}

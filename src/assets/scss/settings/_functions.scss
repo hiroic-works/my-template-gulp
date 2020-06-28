@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+@import "variable";
+
+//******************/
+//* 関数 */
+//******************/
+
+// 文字のカーニング（letter-spacing）を計算
+// $trackingValue - PhotoShop内のVAのトラッキング値
+@function kerning($trackingValue) {
+	@return ($trackingValue / 1000) #{"em"};
+}
+
+///*
+// * 要素の数値をパーセントにする関数。
+// * @param {number} $thisValue - 対象の要素の値
+// * @param {number} $baseValue - ベースの親要素の値
+// * @param {string} $pettern   - 小数点をどうするか。（round, ceil, floor, none）
+// * @param {number} $digits    - 小数点を何桁で$petternするか。（※$petternで「none」を選べば桁数の制御はできない）
+// */
+// 要素の数値をパーセントにする
+@function percent($thisValue, $baseValue: $_spWidth, $pettern: "ceil", $digits: 4) {
+	$percent: percentage($thisValue/$baseValue);
+	@return decimal($percent, $digits, $pettern);
+}
+
+// 要素の数値をremにする
+@function rem($thisValue, $baseValue: $_spWidth, $pettern: "ceil", $digits: 4) {
+	$unit: rem;
+	$rem: ($thisValue/$baseValue);
+	@return decimal($rem, $digits, $pettern) + $unit;
+}
+
+//小数点設定
+@function decimal($number, $digits: 0, $round: "round") {
+	$n: 1;
+	// 第一引数が数値じゃなかったらエラー
+	@if type-of($number) != number {
+		@warn '#{ $number } is not a number.';
+		@return $number;
+	}
+	// 第二引数が数値じゃなかったらエラー
+	@if type-of($digits) != number {
+		@warn '#{ $digits } is not a number.';
+		@return $number;
+		// 第二引数に単位(px,em,%など)がついていたらエラー
+	} @else if not unitless($digits) {
+		@warn '#{ $digits } has a unit.';
+		@return $number;
+	}
+	// 指定した桁数の数だけループ
+	@for $i from 1 through $digits {
+		$n: $n * 10;
+	}
+	//桁数の制御（四捨五入、切り上げ、切り捨て、何もしない）
+	@if $round == "round" {
+		@return round($number * $n) / $n;
+	} @else if $round == "ceil" {
+		@return ceil($number * $n) / $n;
+	} @else if $round == "floor" {
+		@return floor($number * $n) / $n;
+	} @else if $round == "none" {
+		@return ($number * $n) / $n;
+	} @else {
+		@warn '#{ $round } is undefined keyword.';
+		@return $number;
+	}
+}

@@ -1,0 +1,32 @@
+<%-
+	include(`${site.common.fullpath.views}/partials/layout/_head`, {
+		page: site.pages.top
+	})
+%>
+
+<!-- ヘッダー -->
+<header class="cmn-header">
+	header
+</header>
+<!-- /ヘッダー -->
+
+<!-- page contents -->
+<div class="top-container">
+	top<br>
+	ABSOLUTE_PATH: <%= ABSOLUTE_PATH %><br>
+	RELATIVE_PATH: <%= RELATIVE_PATH %><br>
+	<img src="<%= RELATIVE_PATH %>images/demo01.png" alt="">
+</div>
+<!-- /page contents -->
+
+<!-- フッター -->
+<footer class="cmn-footer">
+	footer
+</footer>
+<!-- /フッター -->
+
+<%-
+	include(`${site.common.fullpath.views}/partials/layout/_footer`, {
+		page: site.pages.top
+	})
+%>

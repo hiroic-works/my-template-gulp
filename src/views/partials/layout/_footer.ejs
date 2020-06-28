@@ -1,0 +1,10 @@
+<!-- Scripts -->
+<% if(page.js.length > 0) { %>
+<% for (let i = 0; i < page.js.length; i++) { %>
+<script src="<%= RELATIVE_PATH %><%= page.js[i] %><%= site.common.hash %>"></script>
+<% } %>
+<% } %>
+<script src="<%= RELATIVE_PATH %>js/app.js<%= site.common.hash %>"></script>
+<!-- Scripts -->
+</body>
+</html>

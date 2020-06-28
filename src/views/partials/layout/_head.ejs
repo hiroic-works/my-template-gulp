@@ -1,0 +1,63 @@
+<%
+	const _default = site.pages.default;
+	for ( let key in _default ) {
+		if ( typeof page[key] === 'undefined' ) {
+			page[key] = _default[key];
+		}
+	}
+	const PAGE_URL = page.root_url + ABSOLUTE_PATH;
+%>
+<!DOCTYPE html>
+<html lang="ja" <% if(page.html_class) { %> class="<%- page.html_class %>" <% } %>>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="<%= page.description %>">
+	<meta name="keywords" content="<%= page.keywords %>">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="email=no,telephone=no,address=no">
+
+	<% if(page.meta.length > 0) { %>
+	<!-- other meta -->
+	<% for (let i = 0; i < page.meta.length; i++) { %>
+	<meta name="<%= page.meta[i].name %>" content="<%= page.meta[i].content %>">
+	<% } %>
+	<!-- /other meta -->
+	<% } %>
+
+	<title><%= page.title %></title>
+
+	<% if(page.check.is_ogp) { %>
+	<!-- OGP -->
+	<meta property="og:title" content="<%= page.title %>">
+	<meta property="og:type" content="<%= page.ogp_type %>">
+	<meta property="og:url" content="<%= PAGE_URL %>">
+	<meta property="og:image" content="<%= page.ogp_img %>">
+	<meta property="og:description" content="<%= page.description %>">
+	<meta property="og:site_name" content="<%= page.ogp_sitename %>">
+	<meta property="og:locale" content="<%= page.ogp_locale %>">
+	<meta property="fb:app_id" content="<%= page.fb_appid %>">
+	<meta name="twitter:card" content="<%= page.tw_card %>">
+	<meta name="twitter:site" content="<%= page.tw_username %>">
+	<!-- /OGP -->
+	<% } %>
+
+	<!-- ICON -->
+	<link rel="icon" href="<%= page.favicon_url %>">
+	<link rel="apple-touch-icon" sizes="180x180" href="<%= page.appleicon_url %>">
+	<!-- /ICON -->
+
+	<link rel="canonical" href="<%= PAGE_URL %>">
+
+	<!-- StyleSheets -->
+	<% if(page.css.length > 0) { %>
+	<% for (let i = 0; i < page.css.length; i++) { %>
+	<link rel="stylesheet" href="<%= RELATIVE_PATH %><%= page.css[i] %><%= site.common.hash %>">
+	<% } %>
+	<% } %>
+	<link rel="stylesheet" href="<%= RELATIVE_PATH %>css/app.css<%= site.common.hash %>">
+	<!-- /StyleSheets -->
+</head>
+
+<body <% if(page.body_class) { %> class="<%- page.body_class %>" <% } %>>

@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+@import "variable";
+
+//******************/
+//* mixin */
+//******************/
+
+//font-size rem
+@mixin fsRem($thisSizeNum, $baseSizeNum: $_baseFontSizeNum, $isImportant: false) {
+	@if $isImportant == true {
+		font-size: ($thisSizeNum / $baseSizeNum) + rem !important;
+	} @else {
+		font-size: ($thisSizeNum / $baseSizeNum) + rem;
+	}
+}
+
+//gradation
+@mixin gradient($start, $end) {
+	background: $start;
+	background: -moz-linear-gradient(top, $start 0%, $end 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(100%, $end));
+	background: -webkit-linear-gradient(top, $start 0%, $end 100%);
+	background: linear-gradient(to bottom, $start 0%, $end 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start}', endColorstr='#{$end}',GradientType=0 );
+}
+
+// media query
+@mixin mediaScreen($breakPointNum, $isWidthState, $breakPointNum2: 0) {
+	@if $isWidthState == max {
+		@media screen and (max-width: $breakPointNum + px) {
+			@content;
+		}
+	} @else if $isWidthState == min {
+		@media screen and (min-width: $breakPointNum + px) {
+			@content;
+		}
+	} @else if $isWidthState == both {
+		@media screen and (min-width: $breakPointNum2 + px) and (max-width: $breakPointNum + px) {
+			@content;
+		}
+	}
+}
