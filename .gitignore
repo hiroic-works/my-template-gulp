@@ -1,7 +1,7 @@
 ### User Setting ###
 
 # compiled output
-public/
+dist/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,sass,macos,windows

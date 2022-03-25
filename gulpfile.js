@@ -32,7 +32,7 @@ const webpackProdConfig = require("./webpack.prod");
 const BASIC_PATH = {
 	ASSETS: 'src/assets',
 	VIEWS: 'src/views',
-	PUBLIC: 'public'
+	PUBLIC: 'dist'
 }
 
 // 各pageデータ
